@@ -16,6 +16,7 @@ Spring MVC + Hibernate + bootstrap + Mysql + Maven
  You should make sure two tables (user, Blog) in your database.
  
  mysql querys :
+ 
  CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nickname` varchar(45) NOT NULL,
@@ -24,6 +25,7 @@ Spring MVC + Hibernate + bootstrap + Mysql + Maven
   `last_name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) 
+
 CREATE TABLE `Blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL,
@@ -36,8 +38,11 @@ CREATE TABLE `Blog` (
  
  
  Front-End Introducation (myapp)
+ 
  download myapp files ,enter below in the commander line 
+ 
  npm i
+ 
  npm start 
  
  
