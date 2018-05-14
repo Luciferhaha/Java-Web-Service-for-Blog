@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="JPA 2.0-2.0">
+  <library name="._cors-filter-1.7">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/._cors-filter-1.7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
