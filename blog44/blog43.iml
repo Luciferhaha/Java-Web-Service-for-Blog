@@ -71,15 +71,21 @@
     <orderEntry type="library" name="Maven: com.thetransactioncompany:cors-filter:2.5" level="project" />
     <orderEntry type="library" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" level="project" />
 <<<<<<< HEAD:blog44/blog43.iml
+<<<<<<< HEAD:blog44/blog43.iml
     <orderEntry type="library" name="Maven: com.alibaba:dubbo:${dubbo.version}" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-guava:2.4.4" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:15.0" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.4" level="project" />
 =======
+=======
+>>>>>>> f6d0185ab892a6bdfecf2fa0bd362934d4611a56:blog43/blog43.iml
     <orderEntry type="library" name="._cors-filter-1.7" level="project" />
     <orderEntry type="library" name="._java-property-utils-1.9" level="project" />
     <orderEntry type="library" name="cors-filter-1.7" level="project" />
     <orderEntry type="library" name="java-property-utils-1.9" level="project" />
+<<<<<<< HEAD:blog44/blog43.iml
+>>>>>>> f6d0185ab892a6bdfecf2fa0bd362934d4611a56:blog43/blog43.iml
+=======
 >>>>>>> f6d0185ab892a6bdfecf2fa0bd362934d4611a56:blog43/blog43.iml
   </component>
 </module>
