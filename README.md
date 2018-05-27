@@ -28,15 +28,7 @@ Spring MVC + Hibernate + bootstrap + Mysql + Maven
   PRIMARY KEY (`id`)
 ) 
 
-CREATE TABLE `Blog` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(45) NOT NULL,
-  `content` varchar(45) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  `pub_date` date NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) 
+
  
  
  Front-End Introducation (myapp)
