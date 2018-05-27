@@ -41,7 +41,7 @@ Spring MVC + Hibernate + bootstrap + Mysql + Maven
  
  ## Docker构建博客镜像
 
-使用Node.js搭建，Mac构建Docker镜像，原始项目为分布式系统课中的聊天室项目
+使用Node.js搭建，Mac构建Docker镜像
 
 ### 构建Docker镜像：
 
