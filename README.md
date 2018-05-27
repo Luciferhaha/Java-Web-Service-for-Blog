@@ -39,15 +39,57 @@ Spring MVC + Hibernate + bootstrap + Mysql + Maven
  
  npm start 
  
- ## Docker构建博客镜像
+## Docker构建博客镜像
 
-使用Node.js搭建，Mac构建Docker镜像
+使用Node.js搭建，Mac构建Docker镜像，原始项目为分布式系统课中的聊天室项目
+
+### Dockerfile构成
+```
+FROM node:alpine
+```
+从官方的版本pull alpine的版本
+
+```
+MAINTAINER Abdollo Tian
+```
+利用maintainer指明维护者为 abdollo
+
+```
+WORKDIR /app
+```
+利用workdir指定工作路径为/app
+
+```
+COPY package.json .
+```
+复制package.json到容器中
+
+```
+RUN npm install --registry=https://registry.npm.taobao.org
+```
+利用run指令在shell里安装所需环境
+
+```
+COPY . /app
+```
+把文件复制到app文件夹中
+
+```
+CMD ["npm","start"]
+```
+利用cmd指令执行容器的启动
+
+```
+EXPOSE 3000
+```
+利用expose命令使得需要使用的端口号能暴露给使用段使其知道其端口
 
 ### 构建Docker镜像：
 
 ```sh
 docker build -t chatroom .
 ```
+
 
 ### 镜像部署：
 
@@ -56,5 +98,3 @@ docker run -d -p 8080:3000 chatroom
 ```
 
 浏览器打开 http://localhost:8080
-
- 
