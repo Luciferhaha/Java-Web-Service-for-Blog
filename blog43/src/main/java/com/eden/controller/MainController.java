@@ -1,18 +1,16 @@
 package com.eden.controller;
 
+import com.eden.model.BlogEntity;
 import com.eden.model.UserEntity;
+import com.eden.repository.BlogRepository;
 import com.eden.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.support.AbstractMultipartHttpServletRequest;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.swing.plaf.synth.SynthTextAreaUI;
+import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +19,8 @@ import java.util.Map;
 public class MainController {
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    BlogRepository blogRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
@@ -114,6 +114,54 @@ public class MainController {
         }else {
             return "null verification";
         }
+
+    }
+    @RequestMapping(value = { "/test/register" }, method = RequestMethod.POST)
+    @ResponseBody
+    public String register(@RequestBody UserEntity userEntity, PrintWriter out){
+        out.println(userEntity.getNickname());
+        List<UserEntity> userList = userRepository.findAll();
+        userList.add(userEntity);
+        out.println(userEntity.getId());
+        out.println(userEntity.getFirstName());
+        try {
+            userRepository.saveAndFlush(userEntity);
+
+        }catch (Exception error){
+            error.printStackTrace();
+        }
+
+
+        return "ok";
+    }
+
+    @RequestMapping(value = { "/test/newtopic" }, method = RequestMethod.POST)
+    @ResponseBody
+    public String addTopic(@RequestBody String jsonstr) {
+        Date utilDate = new Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        System.out.println("you are in now");
+        com.alibaba.fastjson.JSONObject jsonObject=(com.alibaba.fastjson.JSONObject) com.alibaba.fastjson.JSONObject.parse(jsonstr);
+        BlogEntity blogEntity=new BlogEntity();
+        UserEntity userEntity = userRepository.findOne(Integer.parseInt(jsonObject.getString("user_id")));
+        blogEntity.setUserByUserId(userEntity);
+        blogEntity.setPubDate(sqlDate);
+        blogEntity.setTitle(jsonObject.getString("title"));
+        blogEntity.setContent(jsonObject.getString("content"));
+        blogEntity.setPubDate(sqlDate);
+        System.out.println("are you here?");
+
+        try {
+            blogRepository.saveAndFlush(blogEntity);
+
+        }catch (Exception error){
+            error.printStackTrace();
+        }
+        String jsonMessage = "{\"success\":\"true\",\"topic_id\":\"5b00f0808a45377c06ad6d6e\"}";
+
+        com.alibaba.fastjson.JSONObject myJson = (com.alibaba.fastjson.JSONObject) com.alibaba.fastjson.JSONObject.parse(jsonMessage);
+        return myJson.toString();
+
 
     }
 

@@ -1,8 +1,9 @@
 package com.alibaba.dubbo.demo;
 
-import java.util.List;
+
+import java.util.Map;
 
 
 public interface DemoService {
-    List<String> getPermissions(Long id);
+    public String login(Map<String, String> map);
 }

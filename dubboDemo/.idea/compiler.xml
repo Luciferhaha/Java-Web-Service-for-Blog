@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="blog" />
         <module name="dubbo-api" />
         <module name="dubbo-consumer" />
         <module name="dubbo-consumer2" />
@@ -13,6 +14,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="blog" target="1.8" />
+      <module name="blog43" target="1.8" />
       <module name="dubbo-api" target="1.8" />
       <module name="dubbo-consumer" target="1.8" />
       <module name="dubbo-consumer2" target="1.8" />
