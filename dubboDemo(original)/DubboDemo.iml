@@ -4,6 +4,7 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
+<<<<<<< HEAD
       <sourceFolder url="file://$MODULE_DIR$/dubbo-provider2/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dubbo-provider2/src/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/dubbo-consumer3/src/main/java" isTestSource="false" />
@@ -14,6 +15,8 @@
       <sourceFolder url="file://$MODULE_DIR$/dubbo-consumer4/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/springmvc/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/springmvc/src/main/resources" type="java-resource" />
+=======
+>>>>>>> a4c1ce67611af76513bb7ec8fb808194ee7fc96b
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
