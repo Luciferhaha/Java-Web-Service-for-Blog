@@ -1,16 +1,15 @@
-package com.alibaba.dubbo.demo.impl;
+package dubbo.demo.impl;
 
 import com.alibaba.dubbo.demo.DemoService;
+import controller.MainController;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 public class DemoServiceImpl implements DemoService {
-    public List<String> getPermissions(Long id) {
-        List<String> demo = new ArrayList<String>();
-        demo.add(String.format("Permission_%d", id - 1));
-        demo.add(String.format("Permission_%d", id));
-        demo.add(String.format("Permission_%d", id + 1));
-        return demo;
+
+    @Override
+    public String login(Map<String, String> map) {
+        MainController m = new MainController();
+        return m.login(map);
     }
 }

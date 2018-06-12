@@ -1,4 +1,4 @@
-package com.alibaba.dubbo.demo.impl;
+package dubbo.demo.impl;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
